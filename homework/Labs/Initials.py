@@ -1,4 +1,3 @@
-
 #File: DL.py
 #Student: David Lutsenko
 #
@@ -7,14 +6,14 @@
 #Github<lutsenkodavid>
 
 def DLX(): 
-    print('DDDDDDDDDD         LL                  XX          XX     ')   
-    print('DD        DD       LL                   XX        XX      ')  
-    print('DD         DD      LL                     XX     XX       ')  
-    print('DD          DD     LL                      XX   XX        ')  
-    print('DD          DD     LL                       XX XX         ')  
-    print('DD          DD     LL                        XXX          ') 
-    print('DD          DD     LL                       XX XX         ')  
-    print('DD         DD      LL                      XX   XX        ') 
-    print('DD        DD  ..   LL              ..     XX     XX    .. ') 
-    print('DDDDDDDDDD    ..   LLLLLLLLLLLL    ..    XX       XX   .. ')
+    print('DDDDDDDD        LL               XX        XX      ')   
+    print('DDDDDDDDDD      LL                XX      XX       ')  
+    print('DD       DD     LL                 XX    XX        ')  
+    print('DD        DD    LL                  XX  XX         ')  
+    print('DD        DD    LL                   XXXX          ')  
+    print('DD        DD    LL                   XXXX          ') 
+    print('DD        DD    LL                  XX  XX         ')  
+    print('DD       DD     LL                 XX    XX        ') 
+    print('DDDDDDDDDD  ..  LL           ..   XX      XX   ..  ') 
+    print('DDDDDDDD    ..  LLLLLLLLLLLL ..  XX        XX  ..  ')
 DLX()
