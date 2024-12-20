@@ -70,9 +70,6 @@ while True: #gives options to the user what they want to input next
     else:
         print("Invalid choice. Please try again.")
 
-            print(f"\nUpdated overall grade: {calculate_grade():.2f}%\n")
-        else:
-            print("Invalid choice. Try again.")
 
     elif option == 2:  # Create a new 'What If' category
         name = input("Enter the name of the new 'What If' category: ")
