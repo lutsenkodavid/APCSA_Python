@@ -45,31 +45,22 @@ while True: #gives options to the user what they want to input next
         break
 
     elif option == 1:  # Add 'What If' grade to an existing category
-    print("\nCategories:")
-    
-    # Display categories one by one
-    for i in range(len(categ)):
-        print(f"{i + 1}. {categ[i]}")
-    
-    # Ask the user to select a category by its number
-    choice = int(input("\nEnter the number of the category for a 'What If' grade: "))
-    
-    # Check if the choice is valid
-    if choice >= 1 and choice <= len(categ):
-        selected = categ[choice - 1]  # Get the selected category
-        print(f"You selected: {selected}")
-        
-        # Ask the user for 'What If' points earned
-        what_if = float(input(f"Enter the 'What If' points earned for {selected}: "))
-        
-        # Add the 'What If' points to the selected category
-        points_earned[choice - 1] += what_if
-        pp[choice - 1] += what_if
-        
-        print(f"\n'What If' points added to {selected} successfully!")
-    else:
-        print("Invalid choice. Please try again.")
+        print("\nCategories:")
+        categories_line = ""
+        for i in range(len(categ)):
+            categories_line += f"{i + 1}. {categ[i]}    "
+        print(categories_line)
 
+        choice = int(input("\nEnter the number of the category for a 'What If' grade: "))
+        if 1 <= choice <= len(categ):
+            selected = categ[choice - 1]
+            what_if = float(input(f"Enter the 'What If' points earned for {selected}: "))
+            points_earned[choice - 1] += what_if
+            pp[choice - 1] += what_if
+
+            print(f"\nUpdated overall grade: {calculate_grade():.2f}%\n")
+        else:
+            print("Invalid choice. Try again.")
 
     elif option == 2:  # Create a new 'What If' category
         name = input("Enter the name of the new 'What If' category: ")
