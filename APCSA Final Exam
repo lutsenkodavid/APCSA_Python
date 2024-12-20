@@ -1,0 +1,92 @@
+categ = []
+points_earned = []
+pp = []  # Points possible
+
+# Input initial categories
+num_cat = int(input("How many categories do you want to input? "))
+
+for i in range(num_cat):
+    name = input(f"Enter the name of category {i + 1}: ")
+    categ.append(name)
+    
+    earned = float(input(f"Enter points earned for {name}: "))
+    points_earned.append(earned)
+    
+    possible = float(input(f"Enter total points possible for {name}: "))
+    pp.append(possible)
+
+# Function to calculate the overall grade
+def calculate_grade():
+    total_earned = 0 # initialized to zero
+    for earned in points_earned: # earned is used as a variable for each value in points_earned (Ex: [90, 85, 10])
+        total_earned += earned # keeps adding the value
+
+    total_possible = 0 #same thing here
+    for possible in pp:
+        total_possible += possible
+
+    if total_possible > 0: # if the total possible points is not above 0, the program will fail since it will be undefined
+        return (total_earned / total_possible) * 100
+
+# Display current grade
+print(f"\nCurrent overall grade: {calculate_grade():.2f}%\n") # don't forget to put a place holder
+
+# Main menu
+while True: #gives options to the user what they want to input next
+    print("\nOptions:")
+    print("1. Add 'What If' grade to an existing category")
+    print("2. Create a new 'What If' category")
+    print("0. Exit")
+
+    option = int(input("\nChoose an option: "))
+
+    if option == 0:  # The user exits the program 
+        print("Thank you for using the Grade Calculator!")
+        break
+
+    elif option == 1:  # Add 'What If' grade to an existing category
+    print("\nCategories:")
+    
+    # Display categories one by one
+    for i in range(len(categ)):
+        print(f"{i + 1}. {categ[i]}")
+    
+    # Ask the user to select a category by its number
+    choice = int(input("\nEnter the number of the category for a 'What If' grade: "))
+    
+    # Check if the choice is valid
+    if choice >= 1 and choice <= len(categ):
+        selected = categ[choice - 1]  # Get the selected category
+        print(f"You selected: {selected}")
+        
+        # Ask the user for 'What If' points earned
+        what_if = float(input(f"Enter the 'What If' points earned for {selected}: "))
+        
+        # Add the 'What If' points to the selected category
+        points_earned[choice - 1] += what_if
+        pp[choice - 1] += what_if
+        
+        print(f"\n'What If' points added to {selected} successfully!")
+    else:
+        print("Invalid choice. Please try again.")
+
+            print(f"\nUpdated overall grade: {calculate_grade():.2f}%\n")
+        else:
+            print("Invalid choice. Try again.")
+
+    elif option == 2:  # Create a new 'What If' category
+        name = input("Enter the name of the new 'What If' category: ")
+        categ.append(name)  # Add the new category to the list
+        
+        earned = float(input(f"Enter points earned for {name}: "))
+        points_earned.append(earned)  # Add points earned for the new category
+        
+        possible = float(input(f"Enter total points possible for {name}: "))
+        pp.append(possible)  # Add total points possible for the new category
+
+        print(f"\n'What If' category '{name}' added successfully!")
+        print(f"Updated overall grade: {calculate_grade():.2f}%\n")
+
+    else:
+        print("Invalid option. Try again.")
+
